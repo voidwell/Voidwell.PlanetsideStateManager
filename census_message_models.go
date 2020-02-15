@@ -1,14 +1,5 @@
 package main
 
-import (
-	"time"
-)
-
-type CensusHeartbeat struct {
-	lastHeartbeat time.Time
-	contents      interface{}
-}
-
 type CensusServiceState struct {
 	Detail      string `json:"detail"`
 	IsOnline    bool   `json:"online,string"`
@@ -125,33 +116,4 @@ type VehicleDestroyMessage struct {
 	FacilityID          *int   `json:"facility_id,string,omitempty"`
 	FactionID           *int   `json:"faction_id,string,omitempty"`
 	VehicleID           int    `json:"vehicle_id,string"`
-}
-
-type CensusMapRegion struct {
-	MapRegionID    int      `json:"map_region_id,string"`
-	ZoneID         int      `json:"zone_id,string"`
-	FacilityID     int      `json:"facility_id,string"`
-	FacilityName   string   `json:"facility_name"`
-	FacilityTypeID int      `json:"facility_type_id,string"`
-	FacilityType   string   `json:"facility_type"`
-	LocationX      *float32 `json:"location_x,string"`
-	LocationY      *float32 `json:"location_y,string"`
-	LocationZ      *float32 `json:"location_z,string"`
-}
-
-type CensusFacilityLink struct {
-	ZoneID      int    `json:"zone_id,string"`
-	FacilityIDA int    `json:"facility_id_a,string"`
-	FacilityIDB int    `json:"facility_id_b,string"`
-	Description string `json:"description"`
-}
-
-type CensusZone struct {
-	ZoneID int    `json:"zone_id,string"`
-	Name   string `json:"code"`
-}
-
-type CensusMapOwnership struct {
-	RegionID  int `json:"RegionId,string"`
-	FactionID int `json:"FactionID,string"`
 }

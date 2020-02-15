@@ -4,7 +4,7 @@ type WorldState struct {
 	ID            int
 	Name          string
 	IsOnline      bool
-	ZoneOwnership map[int][]*CensusMapOwnership
+	ZoneOwnership map[int][]*CensusRegionOwnership
 }
 
 func NewWorldState(id int, name string, isOnline bool) *WorldState {
@@ -12,7 +12,7 @@ func NewWorldState(id int, name string, isOnline bool) *WorldState {
 		ID:            id,
 		Name:          name,
 		IsOnline:      isOnline,
-		ZoneOwnership: make(map[int][]*CensusMapOwnership),
+		ZoneOwnership: make(map[int][]*CensusRegionOwnership),
 	}
 }
 
